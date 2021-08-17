@@ -26,7 +26,7 @@ Note:  You don't have to install these requirements into your desktop.  It is ce
 
 Once the requirements are installed clone this repository and edit the file variables.tf
 
-*  Edit the variable for your choice of AWS Region (currently, the default is "us-west-1".
+*  Edit the variable for your choice for AWS Region (currently, the default is "us-west-1").
 *  Edit the CIDR blocks if you want to use different address range for your new VPC
 *  Edit the Instance type if you want to use a different instance type (note t2.micro is the only one you can use for free tier)
 
