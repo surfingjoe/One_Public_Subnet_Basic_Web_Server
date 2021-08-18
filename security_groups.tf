@@ -1,5 +1,6 @@
 
-resource "aws_security_group" "web" {
+# ---------- Create the security group for Web Server ---------
+resource "aws_security_group" "web-sg" {
   vpc_id      = aws_vpc.my-vpc.id
   description = "Allows HTTP"
 
