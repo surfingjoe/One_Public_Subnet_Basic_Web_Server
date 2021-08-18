@@ -1,14 +1,15 @@
+# --------- Declare the AWS Region -------------------------------
 provider "aws" {
   region = var.region
 }
 
 
-#Get Linux Ubuntu using SSM Parameter 
+#Get Linux Ubuntu AMI ID, using SSM Parameter 
 data "aws_ssm_parameter" "ubuntu-focal" {
   name = "/aws/service/canonical/ubuntu/server/20.04/stable/current/amd64/hvm/ebs-gp2/ami-id"
 }
 
-# Creating Web server
+# ----------  Creating Web server ---------------------------------
 resource "aws_instance" "web" {
   ami                    = data.aws_ssm_parameter.ubuntu-focal.value
   instance_type          = var.instance_type
@@ -21,7 +22,7 @@ resource "aws_instance" "web" {
   }
 }
 
-
+# ----------- Output the public ID of the Web Server ----------------
 output "web" {
   value = [aws_instance.web.public_ip]
 }
