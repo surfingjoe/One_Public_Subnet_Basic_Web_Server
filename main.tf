@@ -3,6 +3,13 @@ provider "aws" {
   region = var.region
 }
 
+terraform {
+  backend "s3" {
+    bucket = "surfingjoes-terraform-states"
+    key    = "terraform.tfstate"
+    region = "us-west-1"
+  }
+}
 
 # ------- Get Linux Ubuntu AMI ID, using SSM Parameter ----------
 data "aws_ssm_parameter" "ubuntu-focal" {

@@ -17,7 +17,7 @@ The Web server starts out as a simple "Hello World"
 [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 ```
-Note:  You don't have to install these requirements into your desktop.  It is certainly quite feasible to use a virtual desktop for your development environment using tools like Oracle's virtualbox or VMware Workstation or Player, or Mac Fusion or Mac Parallels.  Perhaps an AWS Workspace or AWS Cloud 9 environments.
+Note:  You don't have to install these requirements into your desktop.  You can use virtual desktops instead or cloud based desktops.  For example running a Linux platform like Ubuntu using Oracle's Virtualbox then install the requirements within that development environment.  Or perhaps use AWS Cloud 9 environment.
 ```
 
 ## Configuration
@@ -29,6 +29,7 @@ Once the requirements are installed clone this repository and edit the file vari
 *  Edit the variable for your choice for AWS Region (currently, the default is "us-west-1").
 *  Edit the CIDR blocks if you want to use different address range for your new VPC
 *  Edit the Instance type if you want to use a different instance type (note t2.micro is the only one you can use for free tier)
+*  Note: I'm including a "jenkins file", to run all builds through Jenkins, but you do not need to use Jenkins for this repository to work.  You can clone this repository and run "Terraform Init" and "Terraform Apply"  with or without the Jenkins file.  
 
 ## Launching the VPC and Web Server
 After installing the requesite software and configuration of variables.
