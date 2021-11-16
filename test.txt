@@ -1,4 +1,1 @@
-test to see if adding a file will cause Jenkins build
-add another line, see if we can't get a auto-build
-another line to test
-one more test
+Seriously, it should work now
