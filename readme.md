@@ -54,4 +54,13 @@ After Terraform finishes provisioning the new VPC, Security Group and Web Server
 
 Once you have finished with this example run:
 
-* Terraform Destroy (to remove VPC and Web Server)
+* **RUN Terraform Destroy (to remove VPC and Web Server)**
+
+
+* If using the Jenkinsfile, it is required to use and configure Terraform Plugin in Jenkins.  
+* I have a built in name for a Jenkins Slave encoded in the Jenkins file, pay attention to the Agent name.  
+* If you do run it in Jenkins, the Jenkinsfile uses paramaters, allowing you to run the project to build in AWS the first time, and running the project a second time to choose the destroy option to completely remove the VPC and web server from AWS.
+
+* Note: The terraform plugin doesn't recognize parameters the first time it is run, (a bug in Jenkins),hence will fail because it doesn't see the parameters on the first run.  I am Ok with that, for myself, however to make it run the first time, everytime, you might want to remove the lines associated with using workspace naming paramater and the line that utilizes the workspace name.
+
+*Also, if using the Jenkins file, pay attention to the credential names to plug in your secret credentials for AWS within Jenkins, or better yet use base64encode to encrypt the credentials.
