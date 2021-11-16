@@ -59,7 +59,8 @@ Once you have finished with this example run:
 
 * If using the Jenkinsfile, it is required to use and configure Terraform Plugin in Jenkins.  
 * I have a built in name for a Jenkins Slave encoded in the Jenkins file, pay attention to the Agent name.  
-* If you do run it in Jenkins, the Jenkinsfile uses paramaters, allowing you to run the project to build in AWS the first time, and running the project a second time to choose the destroy option to completely remove the VPC and web server from AWS.
+* If you do run it in Jenkins, the Jenkinsfile uses paramaters, allowing you to run the project to build in AWS the first time.  
+** To remove from AWS after Jenkins build, goto Jenkins project, manually "Build with Parameters" and choose Destroy" **
 
 * Note: The terraform plugin doesn't recognize parameters the first time it is run, (a bug in Jenkins),hence will fail because it doesn't see the parameters on the first run.  I am Ok with that, for myself, however to make it run the first time, everytime, you might want to remove the lines associated with using workspace naming paramater and the line that utilizes the workspace name.
 
