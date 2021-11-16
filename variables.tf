@@ -19,6 +19,7 @@ variable "public_availability_zone"{
     default="us-west-1a"
 }
 
+
 variable "instance_type" {
     type = string
     default = "t2.micro"
