@@ -64,6 +64,5 @@ Once you have finished with this example run:
 
 **To cleanup AWS after Jenkins build, manually run the Jenkins Project a second time and choose "Build with Parameters" and checkmark Destroy **
 
-* Note: The terraform plugin doesn't recognize parameters the first time it is run, (a bug in Jenkins),hence will fail because it doesn't see the parameters on the first run.  I am Ok with that, for myself, however to make it run the first time, everytime, you might want to remove the lines associated with using workspace naming paramater and the line that utilizes the workspace name.
-
-* Also, if using the Jenkins file, pay attention to the credential names to plug in your secret credentials, or better yet use base64encode to encrypt the credentials.
+* Note: The terraform plugin doesn't recognize parameters the first time it is run, go to build output and on the left side of Jenkins watch for requret to proceed.
+* After first build, Jenkins provides a button to "build with parameters".
